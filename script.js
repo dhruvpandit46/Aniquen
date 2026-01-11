@@ -163,7 +163,7 @@ duration: "5:25",
 genre: "Slowed",
 color: "#1A1A1A",
 image: "https://i.ytimg.com/vi/tx8iGleOODk/maxresdefault.jpg",
-file: "ASCEND - SLOWED.mp3",
+file: "ASCEND - Slowed.mp3",
 isDemo: true
 },
 {
@@ -207,7 +207,7 @@ duration: "4:55",
 genre: "Slowed",
 color: "#2C2C2C",
 image: "https://i.scdn.co/image/ab67616d0000b27389cad173e6b749ae9bd45f17",
-file: "AVANGARD (Slowed Reverb).mp3",
+file: "AVANGARD (Slowed  Reverb).mp3",
 isDemo: true
 },
 {
