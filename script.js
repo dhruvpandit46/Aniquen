@@ -1573,3 +1573,4 @@ isDemo: true
         playPreviousSong();
     });
 }
+
