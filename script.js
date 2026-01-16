@@ -719,82 +719,6 @@ isDemo: true
             state.blobURLs.clear();
         }
 
-        // ==============================================
-        // FILE UPLOAD HANDLER - PERMANENT STORAGE VERSION
-        // ==============================================
-        async function handleFileUpload() {
-            const fileInput = document.getElementById('file-input');
-            const files = fileInput.files;
-            
-            if (files.length === 0) {
-                alert('Please select files first!');
-                return;
-            }
-            
-            let uploadedCount = 0;
-            
-            for (let i = 0; i < files.length; i++) {
-                const file = files[i];
-                
-                // Check if file is audio
-                if (!file.type.startsWith('audio/')) {
-                    continue;
-                }
-                
-                try {
-                    // Generate unique ID for the song
-                    const songId = Date.now() + i;
-                    
-                    // Extract duration (this requires loading the audio file)
-                    const duration = await getAudioDuration(file);
-                    
-                    // Create song metadata
-                    const songMetadata = {
-                        id: songId,
-                        title: file.name.replace(/\.[^/.]+$/, ""), // Remove extension
-                        artist: "Uploaded",
-                        duration: formatDuration(duration),
-                        genre: "Uploaded",
-                        color: getRandomColor(),
-                        image: null,
-                        isUploaded: true,
-                        fileName: file.name,
-                        mimeType: file.type,
-                        fileSize: file.size,
-                        uploadDate: new Date().toISOString()
-                    };
-                    
-                    // Save the actual audio file BLOB to IndexedDB
-                    await saveAudioBlobToDB(file, songMetadata);
-                    
-                    // Load the blob back and create URL
-                    const audioURL = await loadAudioBlobFromDB(songId);
-                    
-                    if (audioURL) {
-                        // Add to musicLibrary with blob-based URL
-                        musicLibrary.push({
-                            ...songMetadata,
-                            file: audioURL
-                        });
-                        
-                        uploadedCount++;
-                        console.log("Song uploaded and saved permanently:", songMetadata.title);
-                    }
-                } catch (error) {
-                    console.error("Error uploading file:", file.name, error);
-                }
-            }
-            
-            if (uploadedCount > 0) {
-                alert(`Successfully uploaded ${uploadedCount} song(s)! They will be available permanently.`);
-                updateUI();
-                fileUploadContainer.classList.remove('active');
-                fileInput.value = ''; // Reset file input
-            } else {
-                alert('No valid audio files found. Please select MP3 or OGG files.');
-            }
-        }
-
         // Helper function to get audio duration
         function getAudioDuration(file) {
             return new Promise((resolve, reject) => {
@@ -1573,4 +1497,5 @@ isDemo: true
         playPreviousSong();
     });
 }
+
 
