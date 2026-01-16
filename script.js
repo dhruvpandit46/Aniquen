@@ -502,98 +502,6 @@ isDemo: true
             });
         }
 
-
-        // ==============================================
-        // LOAD AUDIO BLOB FROM INDEXEDDB AND CREATE PLAYABLE URL
-        // ==============================================
-        async function loadAudioBlobFromDB(songId) {
-            return new Promise((resolve, reject) => {
-                if (!db) {
-                    reject(new Error("Database not initialized"));
-                    return;
-                }
-                
-                const transaction = db.transaction([STORE_NAMES.AUDIO_BLOBS], 'readonly');
-                const audioStore = transaction.objectStore(STORE_NAMES.AUDIO_BLOBS);
-                const index = audioStore.index('songId');
-                const request = index.get(songId);
-                
-                request.onsuccess = (event) => {
-                    const record = event.target.result;
-                    
-                    if (!record) {
-                        resolve(null); // No blob found for this song
-                        return;
-                    }
-                    
-                    // Convert ArrayBuffer back to Blob
-                    const blob = new Blob([record.fileBlob], { type: record.mimeType });
-                    
-                    // Create object URL from the Blob
-                    const objectURL = URL.createObjectURL(blob);
-                    
-                    // Store the URL for later cleanup
-                    state.blobURLs.set(songId, objectURL);
-                    
-                    console.log("Loaded audio blob from IndexedDB:", songId);
-                    resolve(objectURL);
-                };
-                
-                request.onerror = (event) => {
-                    console.error("Error loading audio blob:", event.target.error);
-                    reject(event.target.error);
-                };
-            });
-        }
-
-        // ==============================================
-        // LOAD ALL SAVED SONGS FROM INDEXEDDB ON APP START
-        // ==============================================
-        async function loadAllSavedSongs() {
-            return new Promise((resolve, reject) => {
-                if (!db) {
-                    resolve([]);
-                    return;
-                }
-                
-                const transaction = db.transaction([STORE_NAMES.SONG_METADATA], 'readonly');
-                const metadataStore = transaction.objectStore(STORE_NAMES.SONG_METADATA);
-                const request = metadataStore.getAll();
-                
-                request.onsuccess = async (event) => {
-                    const savedSongs = event.target.result;
-                    console.log("Found saved songs:", savedSongs.length);
-                    
-                    // For each saved song, load its audio blob URL
-                    for (const songMetadata of savedSongs) {
-                        // Check if we already have this song in memory (to avoid duplicates)
-                        const existingIndex = musicLibrary.findIndex(s => s.id === songMetadata.id);
-                        
-                        if (existingIndex === -1) {
-                            // Load the audio blob and get playable URL
-                            const audioURL = await loadAudioBlobFromDB(songMetadata.id);
-                            
-                            if (audioURL) {
-                                // Add the song to musicLibrary with the blob URL
-                                musicLibrary.push({
-                                    ...songMetadata,
-                                    file: audioURL, // This is the blob-based URL
-                                    isUploaded: true // Mark as uploaded song
-                                });
-                            }
-                        }
-                    }
-                    
-                    resolve(savedSongs.length);
-                };
-                
-                request.onerror = (event) => {
-                    console.error("Error loading saved songs:", event.target.error);
-                    reject(event.target.error);
-                };
-            });
-        }
-
         // ==============================================
         // LOAD CACHED DATA (PLAY COUNTS, RECENT SONGS)
         // ==============================================
@@ -1441,6 +1349,7 @@ isDemo: true
         playPreviousSong();
     });
 }
+
 
 
 
