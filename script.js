@@ -502,62 +502,6 @@ isDemo: true
             });
         }
 
-        // ==============================================
-        // SAVE AUDIO FILE BLOB TO INDEXEDDB (PERMANENT STORAGE)
-        // ==============================================
-        async function saveAudioBlobToDB(file, songMetadata) {
-            return new Promise((resolve, reject) => {
-                if (!db) {
-                    reject(new Error("Database not initialized"));
-                    return;
-                }
-                
-                const transaction = db.transaction([STORE_NAMES.AUDIO_BLOBS, STORE_NAMES.SONG_METADATA], 'readwrite');
-                
-                // Read file as ArrayBuffer (the actual binary data)
-                const reader = new FileReader();
-                
-                reader.onload = function(event) {
-                    const arrayBuffer = event.target.result;
-                    
-                    // Store the ArrayBuffer in IndexedDB
-                    const audioBlob = {
-                        id: songMetadata.id,
-                        songId: songMetadata.id,
-                        fileBlob: arrayBuffer,
-                        mimeType: file.type,
-                        fileName: file.name,
-                        timestamp: new Date().toISOString()
-                    };
-                    
-                    const audioStore = transaction.objectStore(STORE_NAMES.AUDIO_BLOBS);
-                    const putRequest = audioStore.put(audioBlob);
-                    
-                    putRequest.onsuccess = () => {
-                        console.log("Audio blob saved to IndexedDB:", songMetadata.id);
-                        
-                        // Also save song metadata
-                        const metadataStore = transaction.objectStore(STORE_NAMES.SONG_METADATA);
-                        metadataStore.put(songMetadata);
-                        
-                        resolve(songMetadata.id);
-                    };
-                    
-                    putRequest.onerror = (event) => {
-                        console.error("Error saving audio blob:", event.target.error);
-                        reject(event.target.error);
-                    };
-                };
-                
-                reader.onerror = (event) => {
-                    console.error("Error reading file:", event.target.error);
-                    reject(event.target.error);
-                };
-                
-                // Read the file as ArrayBuffer
-                reader.readAsArrayBuffer(file);
-            });
-        }
 
         // ==============================================
         // LOAD AUDIO BLOB FROM INDEXEDDB AND CREATE PLAYABLE URL
@@ -1497,5 +1441,6 @@ isDemo: true
         playPreviousSong();
     });
 }
+
 
 
