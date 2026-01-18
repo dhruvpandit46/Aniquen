@@ -425,7 +425,7 @@ isDemo: true
         const nowPlayingScreen = document.getElementById('now-playing');
         const miniPlayer = document.getElementById('mini-player');
         const searchResults = document.getElementById('search-results');
-        const fileUploadContainer = document.getElementById('file-upload-container');
+        
 
         // ==============================================
         // INDEXEDDB CONFIGURATION FOR PERMANENT STORAGE
@@ -1349,6 +1349,7 @@ isDemo: true
         playPreviousSong();
     });
 }
+
 
 
 
