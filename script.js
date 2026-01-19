@@ -112,7 +112,7 @@ isDemo: true
 },
 
 {
-id: 11,
+id: 9,
 title: "SMACK THAT (SLOWED + REVERB)",
 artist: "AKON",
 duration: "4:58",
@@ -123,7 +123,7 @@ file: "SMACK THAT (SLOWED + REVERB).mp3",
 isDemo: true
 },
 {
-id: 12,
+id: 10,
 title: "SAKA SAKA SAKA",
 artist: "MC SAKA",
 duration: "2:55",
@@ -134,7 +134,7 @@ file: "SAKA SAKA SAKA.mp3",
 isDemo: true
 },
 {
-id: 13,
+id: 11,
 title: "VILLAGE FUNK",
 artist: "RUSTIC BEATZ",
 duration: "3:40",
@@ -145,7 +145,7 @@ file: "VILLAGE FUNK.mp3",
 isDemo: true
 },
 {
-id: 14,
+id: 12,
 title: "SWEET DREAMS ULTRAFUNK",
 artist: "ULTRA REMIX",
 duration: "4:12",
@@ -156,7 +156,7 @@ file: "SWEET DREAMS ULTRAFUNK.mp3",
 isDemo: true
 },
 {
-id: 15,
+id: 13,
 title: "ASCEND (SLOWED)",
 artist: "NEWHOPE",
 duration: "5:25",
@@ -167,7 +167,7 @@ file: "ASCEND - Slowed.mp3",
 isDemo: true
 },
 {
-id: 16,
+id: 14,
 title: "BALKAN FUNK",
 artist: "EAST GROOVE",
 duration: "3:50",
@@ -178,7 +178,7 @@ file: "BALKAN FUNK.mp3",
 isDemo: true
 },
 {
-id: 17,
+id: 15,
 title: "VIOLENTO",
 artist: "MC BRUTAL",
 duration: "2:58",
@@ -189,7 +189,7 @@ file: "VIOLENTO.mp3",
 isDemo: true
 },
 {
-id: 18,
+id: 16,
 title: "CANTO DE LUNA",
 artist: "LUNA GROOVE",
 duration: "3:44",
@@ -200,7 +200,7 @@ file: "CANTO DE LUNA.mp3",
 isDemo: true
 },
 {
-id: 19,
+id: 17,
 title: "AVANGARD (SLOWED)",
 artist: "AVANGARD",
 duration: "4:55",
@@ -211,7 +211,7 @@ file: "AVANGARD (Slowed  Reverb).mp3",
 isDemo: true
 },
 {
-id: 20,
+id: 18,
 title: "EL BEIBI FUNK",
 artist: "MC BEIBI",
 duration: "3:28",
@@ -222,7 +222,7 @@ file: "EL BEIBI FUNK.mp3",
 isDemo: true
 },
 {
-id: 21,
+id: 19,
 title: "LET'S GO GAMBLING",
 artist: "NIGHT RUNNER",
 duration: "3:52",
@@ -233,7 +233,7 @@ file: "LET'S GO GAMBLING.mp3",
 isDemo: true
 },
 {
-id: 22,
+id: 20,
 title: "CONFESS YOUR LOVE FUNK",
 artist: "EDWARD MAYA (FUNK REMIX)",
 duration: "4:05",
@@ -244,7 +244,7 @@ file: "CONFESS YOUR LOVE FUNK.mp3",
 isDemo: true
 },
 {
-id: 23,
+id: 21,
 title: "ODNOGO ULTRAFUNK (Slowed)",
 artist: "ULTRA REMIX",
 duration: "3:48",
@@ -255,7 +255,7 @@ file: "ODNOGO ULTRAFUNK ULTRA SLOWED.mp3",
 isDemo: true
 },
 {
-id: 24,
+id: 22,
 title: "Vem Vem (Super Slowed)",
 artist: "DJ NANDO",
 duration: "2:42",
@@ -266,7 +266,7 @@ file: "Vem Vem (Super Slowed).mp3",
 isDemo: true
 },
 {
-id: 25,
+id: 23,
 title: "NO ERA AMOR (Super Slowed)",
 artist: "DJ LATINA",
 duration: "3:35",
@@ -277,7 +277,7 @@ file: "NO ERA AMOR (Super Slowed).mp3",
 isDemo: true
 },
 {
-id: 26,
+id: 24,
 title: "FUNK OSCURO (Super Slowed)",
 artist: "DARK PHONK",
 duration: "4:05",
@@ -288,7 +288,7 @@ file: "FUNK OSCURO (Super Slowed).mp3",
 isDemo: true
 },
 {
-id: 27,
+id: 25,
 title: "TAK TAK (Slowed)",
 artist: "MC TAK",
 duration: "2:58",
@@ -299,7 +299,7 @@ file: "TAK TAK (Slowed).mp3",
 isDemo: true
 },
 {
-id: 28,
+id: 26,
 title: "Shaitaan Theme",
 artist: "AMIT TRIVEDI",
 duration: "4:25",
@@ -310,7 +310,7 @@ file: "Shaitaan Theme.mp3",
 isDemo: true
 },
 {
-id: 29,
+id: 27,
 title: "UNSTOPPABLE",
 artist: "SIA (PHONK REMIX)",
 duration: "3:18",
@@ -321,7 +321,7 @@ file: "Unstoppable.mp3",
 isDemo: true
 },
 {
-id: 30,
+id: 28,
 title: "BELIEVER",
 artist: "IMAGINE DRAGONS (FUNK REMIX)",
 duration: "3:25",
@@ -332,7 +332,7 @@ file: "Believer.mp3",
 isDemo: true
 },
 {
-id: 31,
+id: 29,
 title: "ASTRONAUT IN THE OCEAN",
 artist: "MASKED WOLF (PHONK REMIX)",
 duration: "3:45",
@@ -343,7 +343,7 @@ file: "Astronaut In The Ocean.mp3",
 isDemo: true
 },
 {
-id: 32,
+id: 30,
 title: "SMACK THAT (SLOWED)",
 artist: "AKON",
 duration: "4:40",
@@ -354,7 +354,7 @@ file: "SMACK THAT (SLOWED).mp3",
 isDemo: true
 },
 {
-id: 33,
+id: 31,
 title: "BEGGIN'",
 artist: "MÅNESKIN (FUNKO REMIX)",
 duration: "3:28",
@@ -365,7 +365,7 @@ file: "Beggin'.mp3",
 isDemo: true
 },
 {
-id: 34,
+id: 32,
 title: "BELLY DANCER",
 artist: "AKON (PHONK REMIX)",
 duration: "3:52",
@@ -376,7 +376,7 @@ file: "Belly Dancer.mp3",
 isDemo: true
 },
 {
-id: 39,
+id: 33,
 title: "PYTHON FUNK",
 artist: "DEVBEAT",
 duration: "3:15",
@@ -384,6 +384,534 @@ genre: "Tech Funk",
 color: "#7B61FF",
 image: "https://c.saavncdn.com/072/PYTHON-FUNK-English-2024-20240831070936-500x500.jpg",
 file: "PYTHON FUNK.mp3",
+isDemo: true
+},
+{
+id: 34,
+title: "FUNK UNIVERSO",
+artist: "AKON (PHONK REMIX)",
+duration: "2:07",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/3a/1a/26/3a1a2678-35f4-52f4-22c6-60d59ebf9f8e/198588478509.jpg/1200x1200bf-60.jpg",
+file: "FUNK UNIVERSO.mp3",
+isDemo: true
+},
+{
+id: 35,
+title: "FUNK SECRETO ULTRA SLOWED",
+artist: "AKON (PHONK REMIX)",
+duration: "1:29",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://i.ytimg.com/vi/Xm8nn0YC4bM/maxresdefault.jpg",
+file: "FUNK SECRETO ULTRA SLOWED.mp3",
+isDemo: true
+},
+{
+id: 36,
+title: "JUJALARIM FUNK",
+artist: "AKON (PHONK REMIX)",
+duration: "2:01",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://images.genius.com/82e12f25f5cad6d309b39a769c1d516b.640x640x1.jpg",
+file: "JUJALARIM FUNK.mp3",
+isDemo: true
+},
+{
+id: 37,
+title: "PACIENTE FUNK",
+artist: "AKON (PHONK REMIX)",
+duration: "1:07",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://audio.com/s3w/audio.com.static/audio/image/48/51/1832275127475148-1832275161666939.jpeg",
+file: "Paciente_Funk.mp3",
+isDemo: true
+},
+{
+id: 38,
+title: "AIRTEL PHONK",
+artist: "AKON (PHONK REMIX)",
+duration: "1:32",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://audio.com/s3w/audio.com.static/audio/image/46/31/1849326047883146-1849326069606548.jpeg",
+file: "AIRTEL PHONK.mp3",
+isDemo: true
+},
+{
+id: 39,
+title: "Another Love",
+artist: "AKON (PHONK REMIX)",
+duration: "4:04",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://a10.gaanacdn.com/gn_img/albums/ZaP37RKDy7/P374vkkBWD/size_m.jpg",
+file: "Another Love.mp3",
+isDemo: true
+},
+{
+id: 40,
+title: "BAD PARENTING FUNK V2",
+artist: "AKON (PHONK REMIX)",
+duration: "1:49",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://i.ytimg.com/vi/bN3HLty5msk/maxresdefault.jpg",
+file: "BAD PARENTING FUNK V2 (Ultra Slowed).mp3",
+isDemo: true
+},
+{
+id: 41,
+title: "BLOODY! (ULTRA SLOWED)",
+artist: "AKON (PHONK REMIX)",
+duration: "2:19",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://lh3.googleusercontent.com/Q1aHz2c2F5c9upRblEVv2iB9ucEll4flTHsiYtoMtOvD_vqhctdu5L74kx1ObXANokyQxXFdpD0R96VM",
+file: "BLOODY! (ULTRA SLOWED).mp3",
+isDemo: true
+},
+{
+id: 42,
+title: "BLUE HORIZON FUNK - ULTRA SLOWED",
+artist: "AKON (PHONK REMIX)",
+duration: "2:01",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://a10.gaanacdn.com/gn_img/albums/Oxd3xP3gVY/d3xDlxlY3g/size_m.jpg",
+file: "BLUE HORIZON FUNK - ULTRA SLOWED.mp3",
+isDemo: true
+},
+{
+id: 43,
+title: "Boys Interface - Slowed",
+artist: "AKON (PHONK REMIX)",
+duration: "2:55",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://s.mxmcdn.net/images-storage/albums2/9/0/2/6/1/0/80016209_500_500.jpg",
+file: "Boys Interface - Slowed.mp3",
+isDemo: true
+},
+{
+id: 44,
+title: "CORRUPÇÃO FUNK RJ",
+artist: "AKON (PHONK REMIX)",
+duration: "1:19",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/5e/e5/02/5ee502a3-fb6c-1c60-b2fb-493b86c5f496/cover.jpg/800x800cc.jpg",
+file: "CORRUPÇÃO FUNK RJ.mp3",
+isDemo: true
+},
+{
+id: 45,
+title: "Cuando se te moja la tarea 2 (Slowed)",
+artist: "AKON (PHONK REMIX)",
+duration: "3:30",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://assets.audiomack.com/ldrr-1/11305977-3617389751538.jpg?width=1000&height=1000&max=true",
+file: "Cuando se te moja la tarea 2 (Slowed).mp3",
+isDemo: true
+},
+{
+id: 46,
+title: "Death Is No More",
+artist: "AKON (PHONK REMIX)",
+duration: "2:18",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://th.bing.com/th/id/R.902a15d9a12a71b37f367764c8de1ca6?rik=RA760OJEujPiVg&riu=http%3a%2f%2fimg3.kuwo.cn%2fstar%2falbumcover%2f500%2fs3s17%2f49%2f1052657244.jpg&ehk=fjVyO%2bUwX6DqtUbocnlHOIAkEYqau1yWMWYt5BOCif8%3d&risl=&pid=ImgRaw&r=0",
+file: "Death Is No More.mp3",
+isDemo: true
+},
+{
+id: 47,
+title: "Devil Eyes",
+artist: "AKON (PHONK REMIX)",
+duration: "2:11",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://imagescdn.junodownload.com/full/CS6620826-02A-BIG.jpg",
+file: "Devil Eyes.mp3",
+isDemo: true
+},
+{
+id: 48,
+title: "DNA - Slowed",
+artist: "AKON (PHONK REMIX)",
+duration: "1:43",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/9a/13/e8/9a13e8e3-93ff-fd84-cbdc-da6b0461fe90/cover.jpg/800x800cc.jpg",
+file: "DNA - Slowed.mp3",
+isDemo: true
+},
+{
+id: 49,
+title: "Faded",
+artist: "ALAN WALKER",
+duration: "3:32",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://www.songmeaningsandfacts.com/wp-content/uploads/2019/12/Alan-Walker.png",
+file: "Faded.mp3",
+isDemo: true
+},
+{
+id: 50,
+title: "Friendships",
+artist: "AKON (PHONK REMIX)",
+duration: "4:02",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://a10.gaanacdn.com/gn_img/albums/dwN39y83DP/N394nGmOKD/size_m.jpg",
+file: "Friendships.mp3",
+isDemo: true
+},
+{
+id: 51,
+title: "FUNK ESTRANHO",
+artist: "AKON (PHONK REMIX)",
+duration: "3:00",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://i.scdn.co/image/ab67616d0000b273ef943163eed286bfb155885b",
+file: "FUNK ESTRANHO (SUPER SLOWED REVERB).mp3",
+isDemo: true
+},
+{
+id: 52,
+title: "Hope",
+artist: "AKON (PHONK REMIX)",
+duration: "1:50",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://us-tuna-sounds-images.voicemod.net/7b5bc2b8-a498-4134-be41-d9f810779e10-1715513178629.jpg",
+file: "Hope.mp3",
+isDemo: true
+},
+{
+id: 53,
+title: "i like the way you kiss me",
+artist: "AKON (PHONK REMIX)",
+duration: "2:22",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://tse1.mm.bing.net/th/id/OIP.epBAiNpMj6vOAHxJxTK3IAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3",
+file: "i like the way you kiss me.mp3",
+isDemo: true
+},
+{
+id: 54,
+title: "Infinity",
+artist: "AKON (PHONK REMIX)",
+duration: "3:37",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://img.freepik.com/premium-photo/mesmerizing-space-high-quality-ultra-hd-8k-hdr_889056-27040.jpg",
+file: "Infinity.mp3",
+isDemo: true
+},
+{
+id: 55,
+title: "Let Me Down Slowly",
+artist: "AKON (PHONK REMIX)",
+duration: "2:49",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://images.nightcafe.studio/jobs/wuoQZCLEeHKMdyF0c4pe/wuoQZCLEeHKMdyF0c4pe--1--y1ts9.jpg?tr=w-1600,c-at_max",
+file: "Let Me Down Slowly.mp3",
+isDemo: true
+},
+{
+id: 56,
+title: "Locura Tectônica",
+artist: "AKON (PHONK REMIX)",
+duration: "2:00",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://images.genius.com/eb1788a4d56b6b3d106ffdfc2fba5ea1.1000x1000x1.png",
+file: "Locura Tectônica (RJ Version) (Super Slowed).mp3",
+isDemo: true
+},
+{
+id: 57,
+title: "lovely",
+artist: "AKON (PHONK REMIX)",
+duration: "3:20",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://tse1.mm.bing.net/th/id/OIP.d_-93MUgU6iqER_SoTFY7gHaKq?rs=1&pid=ImgDetMain&o=7&rm=3",
+file: "lovely.mp3",
+isDemo: true
+},
+{
+id: 58,
+title: "Manasha (Slowed)",
+artist: "AKON (PHONK REMIX)",
+duration: "2:05",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://tse2.mm.bing.net/th/id/OIP.e00e5PGmOnmlNHC9SwpPagHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
+file: "Manasha (Slowed).mp3",
+isDemo: true
+},
+{
+id: 59,
+title: "MI MAMI FUNK",
+artist: "AKON (PHONK REMIX)",
+duration: "2:00",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://images.genius.com/e7fbfe9113482bf0b9167f767b98110e.1000x1000x1.png",
+file: "MI MAMI FUNK,Vol.2(Super Slowed).mp3",
+isDemo: true
+},
+{
+id: 60,
+title: "MIDDLE OF THE NIGHT",
+artist: "AKON (PHONK REMIX)",
+duration: "3:04",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://is3-ssl.mzstatic.com/image/thumb/Music114/v4/64/03/cb/6403cb43-d892-4663-d759-5093b5ed610c/886448203087.jpg/1200x1200bf-60.jpg",
+file: "MIDDLE OF THE NIGHT.mp3",
+isDemo: true
+},
+{
+id: 61,
+title: "Mockingbird",
+artist: "AKON (PHONK REMIX)",
+duration: "4:10",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://i.scdn.co/image/ab67616d0000b273726d48d93d02e1271774f023",
+file: "Mockingbird.mp3",
+isDemo: true
+},
+{
+id: 62,
+title: "MONTAGEM COMA (Slowed)",
+artist: "AKON (PHONK REMIX)",
+duration: "1:22",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://i.scdn.co/image/ab67616d0000b2731164d485c1327d039b38ff9f",
+file: "MONTAGEM COMA (Slowed).mp3",
+isDemo: true
+},
+{
+id: 63,
+title: "MONTAGEM INVASÃO (Slowed)",
+artist: "AKON (PHONK REMIX)",
+duration: "1:32",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://us-tuna-sounds-images.voicemod.net/2ee00e9b-c54f-42f7-8bfd-3a9e46794fd1-1712054259802.png",
+file: "MONTAGEM INVASÃO (Slowed).mp3",
+isDemo: true
+},
+{
+id: 64,
+title: "Montagem sombra estelar 1.0",
+artist: "AKON (PHONK REMIX)",
+duration: "1:26",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://th.bing.com/th/id/OIP.x_5NT3CPnLlHXyiiVNKLrQHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
+file: "Montagem sombra estelar 1.0(Slowed + Reverb).mp3",
+isDemo: true
+},
+{
+id: 65,
+title: "NITRO - Slowed",
+artist: "AKON (PHONK REMIX)",
+duration: "1:52",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://i.scdn.co/image/ab67616d0000b273b78a4e42ee2b797af8f36dc1",
+file: "NITRO - Slowed.mp3",
+isDemo: true
+},
+{
+id: 66,
+title: "No Lie",
+artist: "AKON (PHONK REMIX)",
+duration: "3:41",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://i.scdn.co/image/ab67616d0000b27313f54ffbe6457c912fd82bcb",
+file: "No Lie.mp3",
+isDemo: true
+},
+{
+id: 67,
+title: "NUNCA MUDA (Slowed)",
+artist: "AKON (PHONK REMIX)",
+duration: "1:30",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/9b/76/c9/9b76c9c8-ddc9-34b7-647a-f6f7f0c33f9e/036885210173.png/800x800cc.jpg",
+file: "NUNCA MUDA_ (Slowed).mp3",
+isDemo: true
+},
+{
+id: 68,
+title: "Old Town Road",
+artist: "AKON (PHONK REMIX)",
+duration: "1:53",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://tse3.mm.bing.net/th/id/OIP.Xva719iI3BV99Wws9rHy9QHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
+file: "Old Town Road.mp3",
+isDemo: true
+},
+{
+id: 69,
+title: "Sanson Ki Maala Pe",
+artist: "AKON (PHONK REMIX)",
+duration: "9:12",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://tse4.mm.bing.net/th/id/OIP.De30UEUEpRVN-7Emh75WAAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3",
+file: "Sanson Ki Maala Pe.mp3",
+isDemo: true
+},
+{
+id: 70,
+title: "Se Paciente Funk (Slowed)",
+artist: "AKON (PHONK REMIX)",
+duration: "1:27",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://lh3.googleusercontent.com/fQRVEW7qwddapvxKkUuOLotcuEjhpsoUnMxBDZeXfs7Cd08Yv7qbKoXOk5vyc-HrgisbFz02c-6t4sOG",
+file: "Se Paciente Funk (Slowed).mp3",
+isDemo: true
+},
+{
+id: 71,
+title: "Shameless",
+artist: "AKON (PHONK REMIX)",
+duration: "3:39",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://i.scdn.co/image/ab67616d0000b273a6c12cb496b2b49b19660719",
+file: "Shameless.mp3",
+isDemo: true
+},
+{
+id: 72,
+title: "Shape of You",
+artist: "AKON (PHONK REMIX)",
+duration: "3:53",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://th.bing.com/th/id/OIP.c2vqk6ifuphliDq_ZYkvdwHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
+file: "Shape of You.mp3",
+isDemo: true
+},
+{
+id: 73,
+title: "SPACE! (Super Slowed)",
+artist: "AKON (PHONK REMIX)",
+duration: "1:49",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://img.freepik.com/premium-photo/galaxy-space-background_148391-21042.jpg",
+file: "SPACE! (Super Slowed).mp3",
+isDemo: true
+},
+{
+id: 74,
+title: "Starboy",
+artist: "AKON (PHONK REMIX)",
+duration: "3:50",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://tse1.mm.bing.net/th/id/OIP.Kw37r_btVb2m3WS7MMeO7wAAAA?rs=1&pid=ImgDetMain&o=7&rm=3",
+file: "Starboy.mp3",
+isDemo: true
+},
+{
+id: 75,
+title: "STAY",
+artist: "AKON (PHONK REMIX)",
+duration: "2:21",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://i.scdn.co/image/ab67616d0000b273809ac854713e65ce1f4d4bdd",
+file: "STAY.mp3",
+isDemo: true
+},
+{
+id: 76,
+title: "Toota Jo Kabhi Tara",
+artist: "AKON (PHONK REMIX)",
+duration: "5:50",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://i.ytimg.com/vi/VtRRgBXZA6k/hqdefault.jpg",
+file: "Toota Jo Kabhi Tara.mp3",
+isDemo: true
+},
+{
+id: 77,
+title: "TREINAMENTO DE FORÇA",
+artist: "AKON (PHONK REMIX)",
+duration: "2:05",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://th.bing.com/th/id/OIP.oCYwojKOvfFGBLGoaDFaHwHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
+file: "TREINAMENTO DE FORÇA.mp3",
+isDemo: true
+},
+{
+id: 78,
+title: "Way down We Go",
+artist: "AKON (PHONK REMIX)",
+duration: "3:39",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://tse4.mm.bing.net/th/id/OIP.Ejvzzqnn3gMX4FVtDqIOJQAAAA?rs=1&pid=ImgDetMain&o=7&rm=3",
+file: "Way down We Go.mp3",
+isDemo: true
+},
+{
+id: 79,
+title: "Woops",
+artist: "AKON (PHONK REMIX)",
+duration: "4:18",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://i.scdn.co/image/ab67616d0000b2735ce4a965b0b9195c29422580",
+file: "Woops.mp3",
+isDemo: true
+},
+{
+id: 80,
+title: "YOUNG GIRL A FUNK",
+artist: "AKON (PHONK REMIX)",
+duration: "2:10",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://lh3.googleusercontent.com/lLh0ptXcfspgIh4nll971yuwJyHrRpgk-hzBXJ5z2WokjNDYjaDZkoX8-6YdJmqqTkY01la-Ja3Dewg",
+file: "YOUNG GIRL A FUNK (SLOWED TO PERFECTION).mp3",
+isDemo: true
+},
+{
+id: 81,
+title: "z-beta 2 (Super Slowed)",
+artist: "AKON (PHONK REMIX)",
+duration: "1:34",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://i.scdn.co/image/ab67616d0000b2734588a54bf0e6bf7a0e1a5a5f",
+file: "z-beta 2 (Super Slowed).mp3",
 isDemo: true
 }
         ];
@@ -1349,6 +1877,7 @@ isDemo: true
         playPreviousSong();
     });
 }
+
 
 
 
