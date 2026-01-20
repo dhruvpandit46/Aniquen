@@ -1,13 +1,13 @@
 /* ==========================================
    ANIQUEN - LEGENDARY MUSIC PLAYER
-   A MASTERPIECE THAT REDEFINES MUSIC APPS
+   FULLY UPGRADED CSS - PERFECT JS MATCH
    ========================================== */
 
 /* ==========================================
    CORE FOUNDATION & CUSTOM PROPERTIES
    ========================================== */
 :root {
-    /* Premium Color Palette - Inspired by Modern Design Systems */
+    /* Premium Color Palette */
     --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
@@ -19,6 +19,7 @@
     --background-card: #1a1a24;
     --background-hover: #22222e;
     --background-active: #2a2a38;
+    --dark-card: #1a1a24;
     
     /* Glassmorphism */
     --glass-bg: rgba(26, 26, 36, 0.7);
@@ -32,13 +33,14 @@
     --text-accent: #667eea;
     
     /* Accent Colors */
+    --primary: #667eea;
     --accent-primary: #667eea;
     --accent-secondary: #764ba2;
     --accent-success: #00f2fe;
     --accent-warning: #f5576c;
     --accent-glow: rgba(102, 126, 234, 0.4);
     
-    /* Shadows - Layered Depth System */
+    /* Shadows */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
@@ -52,7 +54,7 @@
     --border-radius-xl: 24px;
     --border-radius-full: 50%;
     
-    /* Spacing System */
+    /* Spacing */
     --spacing-xs: 4px;
     --spacing-sm: 8px;
     --spacing-md: 16px;
@@ -66,7 +68,7 @@
     --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     
-    /* Z-index Hierarchy */
+    /* Z-index */
     --z-base: 1;
     --z-dropdown: 1000;
     --z-sticky: 1020;
@@ -78,7 +80,7 @@
 }
 
 /* ==========================================
-   GLOBAL RESETS & BASE STYLES
+   GLOBAL RESETS
    ========================================== */
 * {
     margin: 0;
@@ -103,7 +105,6 @@ body {
     position: relative;
 }
 
-/* Animated Background Effect */
 body::before {
     content: '';
     position: fixed;
@@ -145,14 +146,13 @@ body::before {
     background: linear-gradient(180deg, var(--accent-secondary), var(--accent-primary));
 }
 
-/* Selection Styling */
 ::selection {
     background: var(--accent-primary);
     color: white;
 }
 
 /* ==========================================
-   MAIN APP CONTAINER
+   APP CONTAINER
    ========================================== */
 .app-container {
     max-width: 480px;
@@ -167,7 +167,7 @@ body::before {
 }
 
 /* ==========================================
-   HEADER - Premium Navigation Bar
+   HEADER
    ========================================== */
 header {
     position: sticky;
@@ -267,7 +267,7 @@ header {
 }
 
 /* ==========================================
-   SEARCH BAR - Advanced Search Experience
+   SEARCH BAR
    ========================================== */
 .search-container {
     position: relative;
@@ -406,7 +406,7 @@ header {
 }
 
 /* ==========================================
-   SONG BANNER - Dynamic Now Playing Strip
+   SONG BANNER
    ========================================== */
 .song-banner {
     margin: var(--spacing-md) var(--spacing-lg);
@@ -464,7 +464,7 @@ header {
 }
 
 /* ==========================================
-   SECTIONS - Content Organization
+   SECTIONS
    ========================================== */
 .section {
     margin-bottom: var(--spacing-2xl);
@@ -511,7 +511,7 @@ header {
 }
 
 /* ==========================================
-   CARDS - Song Display Cards
+   CARDS
    ========================================== */
 .horizontal-scroll {
     display: flex;
@@ -645,7 +645,7 @@ header {
 }
 
 /* ==========================================
-   SONG LIST - Detailed Song Items
+   SONG LIST
    ========================================== */
 .song-list {
     display: flex;
@@ -763,7 +763,7 @@ header {
 }
 
 /* ==========================================
-   PLAYLIST MANAGEMENT
+   PLAYLIST CONTAINER
    ========================================== */
 .playlist-container {
     display: none;
@@ -778,6 +778,7 @@ header {
     display: flex;
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-lg);
+    padding: 0 var(--spacing-lg);
 }
 
 .action-btn {
@@ -970,7 +971,7 @@ header {
 }
 
 /* ==========================================
-   NOW PLAYING SCREEN - Full Experience
+   NOW PLAYING SCREEN
    ========================================== */
 .now-playing {
     position: fixed;
@@ -1038,7 +1039,7 @@ header {
     letter-spacing: 1px;
 }
 
-/* Album Art Container - Premium Display */
+/* Album Art */
 .album-art-container {
     flex: 1;
     display: flex;
@@ -1115,7 +1116,7 @@ header {
     color: var(--text-muted);
 }
 
-/* Song Info Large - Typography Excellence */
+/* Song Info */
 .song-info-large {
     padding: 0 var(--spacing-xl) var(--spacing-lg);
     text-align: center;
@@ -1136,7 +1137,7 @@ header {
     font-weight: 500;
 }
 
-/* Progress Container - Advanced Playback Control */
+/* Progress */
 .progress-container {
     padding: var(--spacing-lg) var(--spacing-xl);
 }
@@ -1192,7 +1193,7 @@ header {
     opacity: 1;
 }
 
-/* Player Controls - Premium Button Design */
+/* Player Controls */
 .player-controls {
     display: flex;
     align-items: center;
@@ -1263,7 +1264,7 @@ header {
 }
 
 /* ==========================================
-   MINI PLAYER - Persistent Bottom Bar
+   MINI PLAYER
    ========================================== */
 .mini-player {
     position: fixed;
@@ -1312,7 +1313,6 @@ header {
     overflow: hidden;
     flex-shrink: 0;
     box-shadow: var(--shadow-sm);
-    position: relative;
 }
 
 .mini-player-img img {
@@ -1365,7 +1365,6 @@ header {
     justify-content: center;
     cursor: pointer;
     transition: all var(--transition-base);
-    position: relative;
 }
 
 .mini-player-btn:hover {
@@ -1383,7 +1382,7 @@ header {
 }
 
 /* ==========================================
-   CONTEXT MENU - Right-Click Actions
+   CONTEXT MENU - UPDATED FOR ALL OPTIONS
    ========================================== */
 .context-menu {
     position: fixed;
@@ -1393,7 +1392,7 @@ header {
     border: 1px solid var(--glass-border);
     border-radius: var(--border-radius-lg);
     padding: var(--spacing-sm);
-    min-width: 200px;
+    min-width: 220px;
     box-shadow: var(--shadow-xl);
     opacity: 0;
     visibility: hidden;
@@ -1407,7 +1406,8 @@ header {
     transform: scale(1) translateY(0);
 }
 
-.context-item {
+.context-item,
+.context-menu-item {
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
@@ -1420,19 +1420,42 @@ header {
     font-weight: 500;
 }
 
-.context-item:hover {
+.context-item:hover,
+.context-menu-item:hover {
     background: rgba(102, 126, 234, 0.1);
     color: var(--accent-primary);
 }
 
-.context-item i {
+.context-item i,
+.context-menu-item i {
     font-size: 16px;
     width: 20px;
     text-align: center;
 }
 
 /* ==========================================
-   RESPONSIVE DESIGN - Mobile First
+   HOME CONTENT
+   ========================================== */
+#home-content {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+#playlists-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+#playlists-content.active {
+    display: block;
+}
+
+#playlists-grid {
+    padding: 0 var(--spacing-lg);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
    ========================================== */
 @media (max-width: 480px) {
     html {
@@ -1444,6 +1467,10 @@ header {
     }
     
     .section {
+        padding: 0 var(--spacing-md);
+    }
+    
+    .playlist-actions {
         padding: 0 var(--spacing-md);
     }
     
@@ -1486,7 +1513,7 @@ header {
 }
 
 /* ==========================================
-   ANIMATIONS & MICRO-INTERACTIONS
+   ANIMATIONS
    ========================================== */
 @keyframes fadeIn {
     from {
@@ -1508,15 +1535,6 @@ header {
     }
 }
 
-@keyframes slideInLeft {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
 @keyframes pulse {
     0%, 100% {
         transform: scale(1);
@@ -1528,19 +1546,13 @@ header {
     }
 }
 
-/* Apply animations */
-#home-content,
-#playlists-content {
-    animation: fadeIn 0.4s ease;
-}
-
 .playlist-detail.active,
 .all-songs-page.active {
     animation: slideInRight 0.4s ease;
 }
 
 /* ==========================================
-   LOADING & SKELETON STATES
+   SKELETON LOADING
    ========================================== */
 .skeleton {
     background: linear-gradient(
@@ -1564,7 +1576,7 @@ header {
 }
 
 /* ==========================================
-   ACCESSIBILITY ENHANCEMENTS
+   ACCESSIBILITY
    ========================================== */
 @media (prefers-reduced-motion: reduce) {
     *,
@@ -1576,7 +1588,6 @@ header {
     }
 }
 
-/* Focus visible for keyboard navigation */
 *:focus-visible {
     outline: 2px solid var(--accent-primary);
     outline-offset: 2px;
@@ -1600,11 +1611,6 @@ header {
     background-clip: text;
 }
 
-.blur-bg {
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-}
-
 /* ==========================================
    PRINT STYLES
    ========================================== */
@@ -1615,15 +1621,3 @@ header {
         display: none !important;
     }
 }
-
-/* ==========================================
-   DARK MODE SUPPORT (Future Enhancement)
-   ========================================== */
-@media (prefers-color-scheme: light) {
-    /* Light mode variables can be added here if needed */
-}
-
-/* ==========================================
-   END OF MASTERPIECE
-   Built with precision, passion, and perfection
-   ========================================== */
