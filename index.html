@@ -1,236 +1,330 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <title>Aniquen</title>
-        <link rel="icon" type="image/png" href="logo.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link rel="stylesheet" href="style.css"> 
-    </head>
-    <body>
-        <div class="app-container">
-            <!-- Header --> 
-            <header>
-                <div class="header-content">
-                    <img src="logo.png" alt="Anique Logo" class="logo-image">
-                    <div class="logo">Aniquen</div>
-                    <div class="nav-icons">
-                        <i class="fas fa-home active" id="nav-home"></i>
-                        <i class="fas fa-music" id="nav-playlists"></i>
-                    </div>
-                </div>
-            </header>
-
-            <!-- Search Bar with Results -->
-            <div class="search-container">
-                <i class="fas fa-search search-icon"></i>
-                <input type="text" class="search-bar" placeholder="Search songs, artists, or albums..." id="search-input">
-                <div class="search-results" id="search-results">
-                    <!-- Search results will appear here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aniquen</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <div class="header-content">
+                <img src="logo.png" alt="Anique Logo" class="logo-image">
+                <div class="logo">Aniquen</div>
+                <div class="nav-icons">
+                    <i class="fas fa-home active" id="nav-home"></i>
+                    <i class="fas fa-music" id="nav-playlists"></i>
                 </div>
             </div>
+        </header>
 
-            <!-- Song Banner -->
-            <div class="song-banner" id="song-banner">
-                <div class="song-banner-content">
-                    <div class="song-banner-title">Now Playing</div>
-                    <div class="song-banner-subtitle" id="banner-song-title">Select a song to start your journey</div>
-                </div>
+        <!-- Search Bar with Results -->
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-bar" placeholder="Search songs, artists, or albums..." id="search-input">
+            <div class="search-results" id="search-results">
+                <!-- Search results will appear here -->
             </div>
-
-            <!-- Home Content -->
-            <div id="home-content">
-                <!-- Recently Played -->
-                <div class="section">
-                    <div class="section-header">
-                        <div class="section-title">Recently Played</div>
-                        <div class="see-all" id="view-recent">View All</div>
-                    </div>
-                    <div class="horizontal-scroll" id="recent-songs">
-                        <!-- Dynamically filled -->
-                    </div>
-                </div>
-
-                <!-- Most Played -->
-                <div class="section">
-                    <div class="section-header">
-                        <div class="section-title">Top Charts</div>
-                        <div class="see-all" id="view-charts">View All</div>
-                    </div>
-                    <div class="cards-grid" id="most-played">
-                        <!-- Dynamically filled -->
-                    </div>
-                </div>
-
-                <!-- Your Library -->
-                <div class="section">
-                    <div class="section-header">
-                        <div class="section-title">Your Library</div>
-                        <div class="see-all" id="view-library">View All</div>
-                    </div>
-                    <div class="song-list" id="all-songs">
-                        <!-- Dynamically filled (max 10 items) -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- Playlists Content -->
-            <div class="playlist-container" id="playlists-content">
-                <div class="section">
-                    <div class="section-header">
-                        <div class="section-title">Your Playlists</div>
-                    </div>
-                    
-                    <div class="playlist-actions">
-                        <div class="action-btn primary" id="create-playlist">
-                            <i class="fas fa-plus"></i> Create Playlist
-                        </div>
-                        <div class="action-btn" id="shuffle-playlist">
-                            <i class="fas fa-random"></i> Shuffle All
-                        </div>
-                    </div>
-                    
-                    <div class="cards-grid" id="playlists-grid">
-                        <!-- Dynamically filled -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- Playlist Detail Page -->
-            <div class="playlist-detail" id="playlist-detail">
-                <div class="playlist-detail-header">
-                    <div class="playlist-detail-back" id="playlist-detail-back">
-                        <i class="fas fa-arrow-left"></i>
-                    </div>
-                    <div class="playlist-detail-info">
-                        <div class="playlist-detail-title" id="playlist-detail-title">Playlist Name</div>
-                        <div class="playlist-detail-subtitle" id="playlist-detail-subtitle">0 songs</div>
-                    </div>
-                </div>
-                <div class="song-list" id="playlist-detail-songs">
-                    <!-- Playlist songs will appear here -->
-                </div>
-            </div>
-
-            <!-- All Songs Page -->
-            <div class="all-songs-page" id="all-songs-page">
-                <div class="all-songs-header">
-                    <div class="all-songs-back" id="all-songs-back">
-                        <i class="fas fa-arrow-left"></i>
-                    </div>
-                    <div class="all-songs-title" id="all-songs-title">All Songs</div>
-                </div>
-                <div class="all-songs-list" id="all-songs-list">
-                    <!-- All songs will appear here -->
-                </div>
-            </div>
-
-            <!-- Now Playing Screen -->
-            <div class="now-playing" id="now-playing">
-                <div class="now-playing-header">
-                    <div class="now-playing-back" id="now-playing-back">
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="now-playing-title">Now Playing</div>
-                    <div class="now-playing-menu" id="now-playing-menu">
-                        <i class="fas fa-ellipsis-h"></i>
-                    </div>
-                </div>
-                
-                <div class="album-art-container">
-                    <div class="album-art" id="album-art">
-                        <!-- Album art image will be set dynamically -->
-                    </div>
-                </div>
-                
-                <div class="song-info-large">
-                    <div class="song-title-large" id="now-playing-title">Select a Song</div>
-                    <div class="song-artist-large" id="now-playing-artist">Artist Name</div>
-                </div>
-                
-                <div class="progress-container">
-                    <div class="progress-time">
-                        <span id="current-time">0:00</span>
-                        <span id="total-time">0:00</span>
-                    </div>
-                    <div class="progress-bar" id="progress-bar">
-                        <div class="progress" id="progress">
-                            <div class="progress-handle"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="player-controls">
-                    <div class="player-btn" id="shuffle-btn" title="Shuffle">
-                        <i class="fas fa-random"></i>
-                    </div>
-                    <div class="player-btn" id="prev-btn" title="Previous">
-                        <i class="fas fa-step-backward"></i>
-                    </div>
-                    <div class="player-btn play" id="play-pause-btn" title="Play/Pause">
-                        <i class="fas fa-play"></i>
-                    </div>
-                    <div class="player-btn" id="next-btn" title="Next">
-                        <i class="fas fa-step-forward"></i>
-                    </div>
-                    <div class="player-btn" id="repeat-btn" title="Repeat">
-                        <i class="fas fa-redo"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mini Player - Fixed at Bottom -->
-            <div class="mini-player hidden" id="mini-player">
-                <div class="mini-player-info">
-                    <div class="mini-player-img" id="mini-player-img">
-                        <!-- Image will be set dynamically -->
-                    </div>
-                    <div class="mini-player-text">
-                        <div class="mini-player-title" id="mini-player-title">No song playing</div>
-                        <div class="mini-player-artist" id="mini-player-artist">Select a song to play</div>
-                    </div>
-                    <!-- Removed the playing-indicator green dot -->
-                </div>
-                <div class="mini-player-controls">
-                    <div class="mini-player-btn" id="mini-prev-btn">
-                        <i class="fas fa-step-backward"></i>
-                    </div>
-                    <div class="mini-player-btn" id="mini-play-btn">
-                        <i class="fas fa-play"></i>
-                    </div>
-                    <div class="mini-player-btn" id="mini-next-btn">
-                        <i class="fas fa-step-forward"></i>
-                    </div>
-                </div>
-            </div>
-
-<!-- Context Menu -->
-<div class="context-menu" id="context-menu">
-    <div class="context-item" id="context-song-info">
-        <i class="fas fa-info-circle"></i>
-        <span>Song Info</span>
-    </div>
-    <div class="context-item" id="context-add-playlist">
-        <i class="fas fa-plus"></i>
-        <span>Add to Playlist</span>
-    </div>
-    <div class="context-item" id="context-add-queue">
-        <i class="fas fa-list"></i>
-        <span>Add to Queue</span>
-    </div>
-    <div class="context-item" id="context-play-next">
-        <i class="fas fa-step-forward"></i>
-        <span>Play Next</span>
-    </div>
-    <div class="context-item" id="context-remove-playlist">
-        <i class="fas fa-trash"></i>
-        <span>Remove from Playlist</span>
-    </div>
-</div>
         </div>
-        <script src="script.js"></script>
-    </body>
 
-    </html>
+        <!-- Song Banner -->
+        <div class="song-banner" id="song-banner">
+            <div class="song-banner-content">
+                <div class="song-banner-title">Now Playing</div>
+                <div class="song-banner-subtitle" id="banner-song-title">Select a song to start your journey</div>
+            </div>
+        </div>
 
+        <!-- Home Content -->
+        <div id="home-content">
+            <!-- Recently Played -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-title">Recently Played</div>
+                    <div class="see-all" id="view-recent">View All</div>
+                </div>
+                <div class="horizontal-scroll" id="recent-songs">
+                    <!-- Dynamically filled -->
+                </div>
+            </div>
+
+            <!-- Most Played -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-title">Top Charts</div>
+                    <div class="see-all" id="view-charts">View All</div>
+                </div>
+                <div class="cards-grid" id="most-played">
+                    <!-- Dynamically filled -->
+                </div>
+            </div>
+
+            <!-- Your Library -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-title">Your Library</div>
+                    <div class="see-all" id="view-library">View All</div>
+                </div>
+                <div class="song-list" id="all-songs">
+                    <!-- Dynamically filled (max 10 items) -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Playlists Content -->
+        <div class="playlist-container" id="playlists-content">
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-title">Your Playlists</div>
+                    <div class="playlist-options-btn" id="playlist-options">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+                
+                <div class="playlist-actions">
+                    <div class="action-btn primary" id="create-playlist">
+                        <i class="fas fa-plus"></i> Create Playlist
+                    </div>
+                    <div class="action-btn" id="shuffle-playlist">
+                        <i class="fas fa-random"></i> Shuffle All
+                    </div>
+                </div>
+                
+                <div class="cards-grid" id="playlists-grid">
+                    <!-- Dynamically filled -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Playlist Detail Page -->
+        <div class="playlist-detail" id="playlist-detail">
+            <div class="playlist-detail-header">
+                <div class="playlist-detail-back" id="playlist-detail-back">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+                <div class="playlist-detail-info">
+                    <div class="playlist-detail-title" id="playlist-detail-title">Playlist Name</div>
+                    <div class="playlist-detail-subtitle" id="playlist-detail-subtitle">0 songs</div>
+                </div>
+                <div class="playlist-detail-options" id="playlist-detail-options">
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+            <div class="song-list" id="playlist-detail-songs">
+                <!-- Playlist songs will appear here -->
+            </div>
+        </div>
+
+        <!-- All Songs Page -->
+        <div class="all-songs-page" id="all-songs-page">
+            <div class="all-songs-header">
+                <div class="all-songs-back" id="all-songs-back">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+                <div class="all-songs-title" id="all-songs-title">All Songs</div>
+            </div>
+            <div class="all-songs-list" id="all-songs-list">
+                <!-- All songs will appear here -->
+            </div>
+        </div>
+
+        <!-- Now Playing Screen -->
+        <div class="now-playing" id="now-playing">
+            <!-- Full Image Background -->
+            <div class="now-playing-bg" id="now-playing-bg"></div>
+            
+            <!-- Overlay for better text visibility -->
+            <div class="now-playing-overlay"></div>
+            
+            <div class="now-playing-header">
+                <div class="now-playing-back" id="now-playing-back">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="now-playing-title">Now Playing</div>
+                <div class="now-playing-menu" id="now-playing-menu">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+            
+            <div class="album-art-container">
+                <div class="album-art" id="album-art">
+                    <!-- Album art image will be set dynamically -->
+                </div>
+            </div>
+            
+            <div class="song-info-large">
+                <div class="song-title-large" id="now-playing-title">Select a Song</div>
+                <div class="song-artist-large" id="now-playing-artist">Artist Name</div>
+                <div class="song-recommended" id="now-playing-recommended"></div>
+                <div class="song-playlist-info" id="song-playlist-info"></div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-time">
+                    <span id="current-time">0:00</span>
+                    <span id="total-time">0:00</span>
+                </div>
+                <div class="progress-bar" id="progress-bar">
+                    <div class="progress" id="progress">
+                        <div class="progress-handle"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="player-controls">
+                <div class="player-btn" id="shuffle-btn" title="Shuffle">
+                    <i class="fas fa-random"></i>
+                </div>
+                <div class="player-btn" id="prev-btn" title="Previous">
+                    <i class="fas fa-step-backward"></i>
+                </div>
+                <div class="player-btn play" id="play-pause-btn" title="Play/Pause">
+                    <i class="fas fa-play"></i>
+                </div>
+                <div class="player-btn" id="next-btn" title="Next">
+                    <i class="fas fa-step-forward"></i>
+                </div>
+                <div class="player-btn" id="repeat-btn" title="Repeat">
+                    <i class="fas fa-redo"></i>
+                </div>
+            </div>
+            
+            <!-- Volume Control -->
+            <div class="volume-control">
+                <i class="fas fa-volume-down"></i>
+                <input type="range" id="volume-slider" min="0" max="100" value="70" class="volume-slider">
+                <i class="fas fa-volume-up"></i>
+            </div>
+        </div>
+
+        <!-- Mini Player - Fixed at Bottom -->
+        <div class="mini-player hidden" id="mini-player">
+            <div class="mini-player-info">
+                <div class="mini-player-img" id="mini-player-img">
+                    <!-- Image will be set dynamically -->
+                </div>
+                <div class="mini-player-text">
+                    <div class="mini-player-title" id="mini-player-title">No song playing</div>
+                    <div class="mini-player-artist" id="mini-player-artist">Select a song to play</div>
+                </div>
+            </div>
+            <div class="mini-player-controls">
+                <div class="mini-player-btn" id="mini-prev-btn">
+                    <i class="fas fa-step-backward"></i>
+                </div>
+                <div class="mini-player-btn" id="mini-play-btn">
+                    <i class="fas fa-play"></i>
+                </div>
+                <div class="mini-player-btn" id="mini-next-btn">
+                    <i class="fas fa-step-forward"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Context Menu -->
+        <div class="context-menu" id="context-menu">
+            <div class="context-item" id="context-song-info">
+                <i class="fas fa-info-circle"></i>
+                <span>Song Info</span>
+            </div>
+            <div class="context-item" id="context-add-playlist">
+                <i class="fas fa-plus"></i>
+                <span>Add to Playlist</span>
+            </div>
+            <div class="context-item" id="context-add-queue">
+                <i class="fas fa-list"></i>
+                <span>Add to Queue</span>
+            </div>
+            <div class="context-item" id="context-play-next">
+                <i class="fas fa-step-forward"></i>
+                <span>Play Next</span>
+            </div>
+            <div class="context-item" id="context-remove-playlist">
+                <i class="fas fa-trash"></i>
+                <span>Remove from Playlist</span>
+            </div>
+            <div class="context-item" id="context-delete-song">
+                <i class="fas fa-trash-alt"></i>
+                <span>Delete Song</span>
+            </div>
+        </div>
+
+        <!-- Playlist Options Menu -->
+        <div class="context-menu" id="playlist-options-menu">
+            <div class="context-item" id="playlist-edit">
+                <i class="fas fa-edit"></i>
+                <span>Edit Playlist</span>
+            </div>
+            <div class="context-item" id="playlist-delete">
+                <i class="fas fa-trash"></i>
+                <span>Delete Playlist</span>
+            </div>
+        </div>
+
+        <!-- Playlist Creation Modal -->
+        <div class="modal" id="playlist-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modal-title">Create Playlist</h3>
+                    <span class="modal-close" id="modal-close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="playlist-name-input" placeholder="Enter playlist name..." class="modal-input">
+                    <div class="color-picker">
+                        <div class="color-option" style="background: #7B61FF;" data-color="#7B61FF"></div>
+                        <div class="color-option" style="background: #00E5A8;" data-color="#00E5A8"></div>
+                        <div class="color-option" style="background: #FF6B9D;" data-color="#FF6B9D"></div>
+                        <div class="color-option" style="background: #FFB74D;" data-color="#FFB74D"></div>
+                        <div class="color-option" style="background: #5D43E6;" data-color="#5D43E6"></div>
+                        <div class="color-option" style="background: #9D8AFF;" data-color="#9D8AFF"></div>
+                    </div>
+                    <div class="modal-error" id="modal-error"></div>
+                </div>
+                <div class="modal-footer">
+                    <button class="modal-btn secondary" id="modal-cancel">Cancel</button>
+                    <button class="modal-btn primary" id="modal-save">Save</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song Info Modal -->
+        <div class="modal" id="song-info-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Song Information</h3>
+                    <span class="modal-close" id="song-info-close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="song-info-display">
+                        <div class="song-info-image" id="info-song-image"></div>
+                        <div class="song-info-details">
+                            <h4 id="info-song-title">Song Title</h4>
+                            <p id="info-song-artist">Artist</p>
+                            <p id="info-song-genre">Genre</p>
+                            <p id="info-song-duration">Duration</p>
+                            <p id="info-song-plays">Plays: 0</p>
+                            <p id="info-song-recommended">Recommended by: Unknown</p>
+                            <p id="info-song-playlists">In playlists: None</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div class="loading-indicator" id="loading-indicator">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Loading...</div>
+        </div>
+
+        <!-- Toast Notification -->
+        <div class="toast" id="toast"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
