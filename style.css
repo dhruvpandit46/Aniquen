@@ -1426,52 +1426,7 @@ header {
     font-size: 28px;
 }
 
-/* Volume Control */
-.volume-control {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-md);
-    padding: 0 var(--spacing-xl) var(--spacing-2xl);
-    z-index: 3;
-}
 
-.volume-control i {
-    color: var(--text-secondary);
-    font-size: 16px;
-}
-
-.volume-slider {
-    width: 150px;
-    height: 4px;
-    -webkit-appearance: none;
-    appearance: none;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: var(--border-radius-full);
-    outline: none;
-    cursor: pointer;
-}
-
-.volume-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: white;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.volume-slider::-moz-range-thumb {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: white;
-    cursor: pointer;
-    border: none;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
 
 /* ==========================================
    MINI PLAYER
@@ -1985,10 +1940,6 @@ header {
     .player-btn.play i {
         font-size: 24px;
     }
-    
-    .volume-slider {
-        width: 120px;
-    }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
@@ -2135,3 +2086,4 @@ img.loaded {
         display: none !important;
     }
 }
+
