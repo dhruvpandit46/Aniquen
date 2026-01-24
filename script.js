@@ -2259,17 +2259,6 @@ audioPlayer.addEventListener('ended', () => {
 });
 
 // ==============================================
-// VOLUME CONTROL WITH PERSISTENCE
-// ==============================================
-const volumeSlider = document.getElementById('volume-slider');
-volumeSlider.addEventListener('input', (e) => {
-    const volume = e.target.value / 100;
-    audioPlayer.volume = volume;
-    state.volume = volume;
-    saveAppState();
-});
-
-// ==============================================
 // CONTEXT MENU FUNCTIONS (NOW PLAYING MENU FIXED)
 // ==============================================
 function showContextMenu(e, songId) {
@@ -2861,4 +2850,5 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
 
