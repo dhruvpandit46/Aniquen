@@ -913,6 +913,50 @@ color: "#5D43E6",
 image: "https://i.scdn.co/image/ab67616d0000b2734588a54bf0e6bf7a0e1a5a5f",
 file: "z-beta 2 (Super Slowed).mp3",
 isDemo: true
+},
+{
+id: 82,
+title: "FLUXXWAVE",
+artist: "AKON (PHONK REMIX)",
+duration: "2:30",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://i.scdn.co/image/ab67616d0000b273451c3d84572c129fe11dc9d3",
+file: "Fluxxwave.mp3",
+isDemo: true
+},
+{
+id: 83,
+title: "APNA BANA LE",
+artist: "AKON (PHONK REMIX)",
+duration: "4:41",
+genre: "Romance",
+color: "#5D43E6",
+image: "https://i.scdn.co/image/ab67616d0000b2738c2f9f18d110b1a104b092a1",
+file: "Apna Bana Le.mp3",
+isDemo: true
+},
+{
+id: 84,
+title: "RANG JO LAGYO",
+artist: "AKON (PHONK REMIX)",
+duration: "2:09",
+genre: "Romance",
+color: "#5D43E6",
+image: "https://i.ytimg.com/vi/84RT2I6w-Wo/maxresdefault.jpg",
+file: "Rang Jo Lagyo.mp3",
+isDemo: true
+},
+{
+id: 85,
+title: "TU NA MERA",
+artist: "AKON (PHONK REMIX)",
+duration: "3:40",
+genre: "Romance",
+color: "#5D43E6",
+image: "https://i.scdn.co/image/ab67616d0000b273c4cd2006a17eb9abe265cd1f",
+file: "Tu Na Mera.mp3",
+isDemo: true
 }
         ];
 
@@ -2008,5 +2052,6 @@ if ('mediaSession' in navigator) {
     navigator.mediaSession.setActionHandler('nexttrack', playNextSong);
     navigator.mediaSession.setActionHandler('previoustrack', playPreviousSong);
 }
+
 
 
