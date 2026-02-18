@@ -958,7 +958,6 @@ image: "https://i.scdn.co/image/ab67616d0000b273c4cd2006a17eb9abe265cd1f",
 file: "Tu Na Mera.mp3",
 isDemo: true
 },
-},
 {
 id: 86,
 title: "Fendi 2",
@@ -2064,6 +2063,7 @@ if ('mediaSession' in navigator) {
     navigator.mediaSession.setActionHandler('nexttrack', playNextSong);
     navigator.mediaSession.setActionHandler('previoustrack', playPreviousSong);
 }
+
 
 
 
