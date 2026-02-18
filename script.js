@@ -957,6 +957,18 @@ color: "#5D43E6",
 image: "https://i.scdn.co/image/ab67616d0000b273c4cd2006a17eb9abe265cd1f",
 file: "Tu Na Mera.mp3",
 isDemo: true
+},
+},
+{
+id: 86,
+title: "Fendi 2",
+artist: "Rakhim, Khim, and ayv1o",
+duration: "1:31",
+genre: "Phonk",
+color: "#5D43E6",
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3RrQjfFXYIyI9IkOHmia7D_SwxnPG6P6l3mV8eKnthw&s=10",
+file: "Fendi 2.mp3",
+isDemo: true
 }
         ];
 
@@ -2052,6 +2064,7 @@ if ('mediaSession' in navigator) {
     navigator.mediaSession.setActionHandler('nexttrack', playNextSong);
     navigator.mediaSession.setActionHandler('previoustrack', playPreviousSong);
 }
+
 
 
 
