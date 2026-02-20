@@ -129,7 +129,7 @@ artist: "MC SAKA",
 duration: "2:55",
 genre: "Brazil Funk",
 color: "#FF6B9D",
-image: "https://tse1.mm.bing.net/th/id/OIP.6R-xEclr--hqoPVtdNAlKQAAAA?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3",
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbHWU7PoPW3ibyPgSbfAYijRpzlow-R_--WoNoa23snA&s=10",
 file: "SAKA SAKA SAKA.mp3",
 isDemo: true
 },
@@ -2074,6 +2074,7 @@ if ('mediaSession' in navigator) {
     navigator.mediaSession.setActionHandler('nexttrack', playNextSong);
     navigator.mediaSession.setActionHandler('previoustrack', playPreviousSong);
 }
+
 
 
 
