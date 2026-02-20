@@ -979,6 +979,17 @@ color: "#5D43E6",
 image: "https://i.scdn.co/image/ab67616d00001e024fa95985081742db12734225",
 file: "Sanatani Phonk.mp3",
 isDemo: true
+},
+{
+id: 88,
+title: "Papaoutai",
+artist: "Stormia",
+duration: "14:12",
+genre: "Classic",
+color: "#5D43E6",
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ11emuLYQ6Dn_NYoUGpn9W5aWlWokXiEVvxtNecho0Q&s=10",
+file: "Papaoutai.mp3",
+isDemo: true
 }
         ];
 
@@ -2074,6 +2085,7 @@ if ('mediaSession' in navigator) {
     navigator.mediaSession.setActionHandler('nexttrack', playNextSong);
     navigator.mediaSession.setActionHandler('previoustrack', playPreviousSong);
 }
+
 
 
 
