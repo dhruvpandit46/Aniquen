@@ -990,6 +990,17 @@ color: "#5D43E6",
 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ11emuLYQ6Dn_NYoUGpn9W5aWlWokXiEVvxtNecho0Q&s=10",
 file: "Papaoutai.mp3",
 isDemo: true
+},
+{
+id: 89,
+title: "Dernière Danse",
+artist: "Indila",
+duration: "3:34",
+genre: "Classic",
+color: "#5D43E6",
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM1cvz2nyS9wb7DOzV9RjovrW68JX1t-8vYjZLIrFrOQ&s=10",
+file: "Dernière Danse.mp3",
+isDemo: true
 }
         ];
 
@@ -2085,6 +2096,7 @@ if ('mediaSession' in navigator) {
     navigator.mediaSession.setActionHandler('nexttrack', playNextSong);
     navigator.mediaSession.setActionHandler('previoustrack', playPreviousSong);
 }
+
 
 
 
