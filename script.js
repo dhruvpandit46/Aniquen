@@ -1023,6 +1023,17 @@ color: "#5D43E6",
 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0SdMUyFVUoAPt9URhhSQtbWjC2FROrRA1MMvJIgcsSw&s=10",
 file: "Hanuman Chalisa.mp3",
 isDemo: true
+},
+{
+id: 92,
+title: "BOT KAK TO TAK",
+artist: "Asanrap",
+duration: "5:55",
+genre: "Classic",
+color: "#5D43E6",
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZjM7j8ffdzO_G1R3EzGyy2LTkvDpJcu54djfQZtvuS4p-8R1ZkQ8jp7s&s=10",
+file: "bot kak to tak.mp3",
+isDemo: true
 }
         ];
 
@@ -2118,6 +2129,7 @@ if ('mediaSession' in navigator) {
     navigator.mediaSession.setActionHandler('nexttrack', playNextSong);
     navigator.mediaSession.setActionHandler('previoustrack', playPreviousSong);
 }
+
 
 
 
