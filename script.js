@@ -1012,6 +1012,17 @@ color: "#5D43E6",
 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM1cvz2nyS9wb7DOzV9RjovrW68JX1t-8vYjZLIrFrOQ&s=10",
 file: "Love Story.mp3",
 isDemo: true
+},
+{
+id: 91,
+title: "Hanuman Chalisa",
+artist: "Gulshan Kumar, Hariharan",
+duration: "9:41",
+genre: "Bhajan",
+color: "#5D43E6",
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0SdMUyFVUoAPt9URhhSQtbWjC2FROrRA1MMvJIgcsSw&s=10",
+file: "Hanuman Chalisa.mp3",
+isDemo: true
 }
         ];
 
@@ -2107,6 +2118,7 @@ if ('mediaSession' in navigator) {
     navigator.mediaSession.setActionHandler('nexttrack', playNextSong);
     navigator.mediaSession.setActionHandler('previoustrack', playPreviousSong);
 }
+
 
 
 
