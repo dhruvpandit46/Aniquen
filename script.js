@@ -1034,6 +1034,28 @@ color: "#5D43E6",
 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZjM7j8ffdzO_G1R3EzGyy2LTkvDpJcu54djfQZtvuS4p-8R1ZkQ8jp7s&s=10",
 file: "bot kak to tak.mp3",
 isDemo: true
+},
+{
+id: 93,
+title: "Temperature",
+artist: "Sean Paul",
+duration: "3:36",
+genre: "Classic",
+color: "#5D43E6",
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdiKVyCWrnKYET6TtMipwLSj5y81Zj4bTu3U0oqSeRig&s=10",
+file: "Temperature.mp3",
+isDemo: true
+},
+{
+id: 94,
+title: "WHOOPTY",
+artist: "CJ",
+duration: "2:05",
+genre: "Classic",
+color: "#5D43E6",
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfCe_eoKqHPdtNagRw2A6aGB6oTyOCAzPisnZnVU1zL-STZYvdCli9sYVW&s=10",
+file: "WHOOPTY.mp3",
+isDemo: true
 }
         ];
 
@@ -2129,6 +2151,7 @@ if ('mediaSession' in navigator) {
     navigator.mediaSession.setActionHandler('nexttrack', playNextSong);
     navigator.mediaSession.setActionHandler('previoustrack', playPreviousSong);
 }
+
 
 
 
