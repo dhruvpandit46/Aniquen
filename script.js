@@ -377,13 +377,13 @@ isDemo: true
 },
 {
 id: 33,
-title: "PYTHON FUNK",
-artist: "DEVBEAT",
-duration: "3:15",
-genre: "Tech Funk",
+title: "MAMA MA (Slowed)",
+artist: "Aniquen",
+duration: "8:21",
+genre: "Phonk",
 color: "#7B61FF",
-image: "https://c.saavncdn.com/072/PYTHON-FUNK-English-2024-20240831070936-500x500.jpg",
-file: "PYTHON FUNK.mp3",
+image: "https://i.scdn.co/image/ab67616d00001e02d7f477a4505f2b2446ddd011",
+file: "MAMA MA (Slowed).mp3",
 isDemo: true
 },
 {
@@ -1055,6 +1055,17 @@ genre: "Classic",
 color: "#5D43E6",
 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfCe_eoKqHPdtNagRw2A6aGB6oTyOCAzPisnZnVU1zL-STZYvdCli9sYVW&s=10",
 file: "WHOOPTY.mp3",
+isDemo: true
+},
+{
+id: 95,
+title: "Rana Kumbha",
+artist: "Varanasi RRR",
+duration: "1:40",
+genre: "Classic",
+color: "#5D43E6",
+image: "https://i.scdn.co/image/ab67616d0000b273b46c6a5b7d9eaf384f20c1a0",
+file: "Rana Kumbha.mp3",
 isDemo: true
 }
         ];
@@ -2151,6 +2162,7 @@ if ('mediaSession' in navigator) {
     navigator.mediaSession.setActionHandler('nexttrack', playNextSong);
     navigator.mediaSession.setActionHandler('previoustrack', playPreviousSong);
 }
+
 
 
 
