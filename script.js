@@ -1067,6 +1067,28 @@ color: "#5D43E6",
 image: "https://i.scdn.co/image/ab67616d0000b273b46c6a5b7d9eaf384f20c1a0",
 file: "Rana Kumbha.mp3",
 isDemo: true
+},
+{
+id: 96,
+title: "Pal Pal",
+artist: "Afusic (Affan Khan)",
+duration: "2:27",
+genre: "Classic",
+color: "#5D43E6",
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYqxr0_4nEPh1hqe38mKt_JPGYgEkIxsKJlSdQkEqbvQ&s=10",
+file: "Pal Pal.mp3",
+isDemo: true
+},
+{
+id: 97,
+title: "Sahiba",
+artist: "Aditya Rikhari",
+duration: "3:03",
+genre: "Classic",
+color: "#5D43E6",
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY3sH8B5VNOZgPqOoH23YMpVuyeLx35TIbhPbceqp9vg&s=10",
+file: "Sahiba.mp3",
+isDemo: true
 }
         ];
 
