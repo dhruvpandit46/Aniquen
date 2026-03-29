@@ -1109,7 +1109,7 @@ duration: "1:30",
 genre: "Classic",
 color: "#5D43E6",
 image: "https://i.scdn.co/image/ab67616d0000b273290a8b85d86db7f2bfb40067",
-file: "Grok.mp3",
+file: "GROK.mp3",
 isDemo: true
 }
         ];
