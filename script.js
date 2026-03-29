@@ -1089,6 +1089,28 @@ color: "#5D43E6",
 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY3sH8B5VNOZgPqOoH23YMpVuyeLx35TIbhPbceqp9vg&s=10",
 file: "Sahiba.mp3",
 isDemo: true
+},
+{
+id: 98,
+title: "Suzume",
+artist: "Toaka",
+duration: "3:56",
+genre: "Classic",
+color: "#5D43E6",
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvo2lNUjqiTaL3rzObYrxCM-AjqpENqSBE6lAm--DeNDikb8P0IJIXmKYN&s=10",
+file: "Suzume.mp3",
+isDemo: true
+},
+{
+id: 99,
+title: "GROK - Super Slowed",
+artist: "VUKEINE",
+duration: "1:30",
+genre: "Classic",
+color: "#5D43E6",
+image: "https://i.scdn.co/image/ab67616d0000b273290a8b85d86db7f2bfb40067",
+file: "Grok.mp3",
+isDemo: true
 }
         ];
 
