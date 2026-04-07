@@ -239,7 +239,7 @@ artist: "EDWARD MAYA (FUNK REMIX)",
 duration: "4:05",
 genre: "Funk",
 color: "#5D43E6",
-image: "https://i.ytimg.com/vi/-KBKEPOorVg/maxresdefault.jpg",
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvW4WuUWLNs9Vv73epb8Dn96QLvseijRiDEoLBT-yd0taFXse1W11SwT8&s=10",
 file: "CONFESS YOUR LOVE FUNK.mp3",
 isDemo: true
 },
