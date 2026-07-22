@@ -2,6 +2,11 @@
 // Streams mic audio to the remote (custom ONNX model) detection server.
 // On detection, hands off to the AI assistant's startListening() so it
 // actually records the follow-up command and runs it through Whisper + LLM.
+//
+// Supports pause/resume (window.pauseWakeWordDetection /
+// window.resumeWakeWordDetection) so the AI assistant can silence this
+// listener while it's recording a command — WITHOUT closing the socket,
+// so there's no reconnect delay when resuming.
 
 (function () {
     const SAMPLE_RATE = 16000;
@@ -10,6 +15,7 @@
     let audioContext = null;
     let socket = null;
     let isWakeActive = false;
+    let isPaused = false;
     let deviceSampleRate = SAMPLE_RATE;
 
     function resampleTo16k(input, inputRate) {
@@ -27,7 +33,6 @@
         return result;
     }
 
-    // ----- visual feedback on detection, without touching style.css -----
     function flashHeader() {
         const header = document.querySelector('header');
         if (!header) return;
@@ -46,19 +51,12 @@
         isWakeActive = true;
         flashHeader();
 
-        // Hand off to the AI assistant — this starts actual mic recording,
-        // Whisper transcription, and LLM command execution. `aiAssistant` is
-        // a top-level `let` in ai-assistant.js, visible here as a shared
-        // global binding since both scripts run in the same page scope.
         if (typeof aiAssistant !== 'undefined' && aiAssistant && typeof aiAssistant.onWakeWordDetected === 'function') {
             aiAssistant.onWakeWordDetected();
         } else if (typeof showToast === 'function') {
-            // fallback in case the assistant hasn't finished initializing yet
             showToast('🎤 Wake word detected!');
         }
 
-        // lock our own re-triggering briefly — the assistant's own
-        // isListening/isProcessing flags handle the rest of the busy window
         setTimeout(() => { isWakeActive = false; }, 2500);
     }
 
@@ -100,16 +98,17 @@
         const processor = audioContext.createScriptProcessor(4096, 1, 1);
 
         processor.onaudioprocess = (event) => {
+            // Skip all work while paused (during Whisper command recording)
+            if (isPaused) return;
+            if (!socket || socket.readyState !== WebSocket.OPEN) return;
+
             const inputData = event.inputBuffer.getChannelData(0);
             const scaled = new Float32Array(inputData.length);
             for (let i = 0; i < inputData.length; i++) {
                 scaled[i] = inputData[i] * 32768;
             }
             const resampled = resampleTo16k(scaled, deviceSampleRate);
-
-            if (socket && socket.readyState === WebSocket.OPEN) {
-                socket.send(resampled.buffer);
-            }
+            socket.send(resampled.buffer);
         };
 
         source.connect(processor);
@@ -144,4 +143,17 @@
         if (audioContext) audioContext.close().catch(() => {});
         if (socket) socket.close();
     });
+
+    // ----- exposed controls for ai-assistant.js -----
+    // Pausing/resuming NEVER touches the socket connection itself — it stays
+    // open the whole time. This is what avoids any "cold start" delay: when
+    // resumed, the very next audio callback immediately starts sending again.
+    window.pauseWakeWordDetection = function () {
+        isPaused = true;
+        console.log('[ANIQUEN wakeword] Paused (socket stays connected).');
+    };
+    window.resumeWakeWordDetection = function () {
+        isPaused = false;
+        console.log('[ANIQUEN wakeword] Resumed.');
+    };
 })();
