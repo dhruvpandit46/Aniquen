@@ -14,8 +14,8 @@ class AIVoiceAssistant {
         this.commandHistory = [];
         
         // API Keys
-        this.whisperApiKey = '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';
-        this.llmApiKey = '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';
+        this.whisperApiKey = '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';
+        this.llmApiKey = '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';
         
         // Model names
         this.whisperModel = 'whisper-large-v3-turbo';
