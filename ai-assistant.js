@@ -14,8 +14,8 @@ class AIVoiceAssistant {
         this.commandHistory = [];
         
         // API Keys
-        this.whisperApiKey = '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';
-        this.llmApiKey = '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';
+        this.whisperApiKey = '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';
+        this.llmApiKey = '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';
         
         // Model names
         this.whisperModel = 'whisper-large-v3-turbo';
@@ -387,6 +387,14 @@ class AIVoiceAssistant {
         if (this.isListening) return;
         
         try {
+            // Pause the background wake-word listener while we record a
+            // command — the socket stays open (no reconnect delay), we're
+            // just not feeding it audio for a few seconds. This frees up
+            // the server and avoids double-processing the same audio.
+            if (typeof pauseWakeWordDetection === 'function') {
+                pauseWakeWordDetection();
+            }
+
             // Request microphone permission
             const stream = await navigator.mediaDevices.getUserMedia({ 
                 audio: {
@@ -395,6 +403,7 @@ class AIVoiceAssistant {
                     autoGainControl: true
                 } 
             });
+            this._currentStream = stream;
             
             this.isListening = true;
             this.audioChunks = [];
@@ -417,18 +426,21 @@ class AIVoiceAssistant {
             this.mediaRecorder.start(2000); // 2-second chunks
             
             this.updateUIState('listening');
+            this.playBeep();
             this.showToast('🎤 Listening... Speak your command');
             
-            // Auto-stop after 10 seconds
+            // Hard safety cap — normally silence detection below will stop
+            // things sooner (~7-8s total), this is just a worst-case limit.
             if (this.listeningTimeout) {
                 clearTimeout(this.listeningTimeout);
             }
-            
             this.listeningTimeout = setTimeout(() => {
                 if (this.isListening) {
                     this.stopListening();
                 }
-            }, 10000);
+            }, 9000);
+
+            this._setupSilenceDetection(stream);
             
             console.log('🎤 Started listening');
             
@@ -437,6 +449,80 @@ class AIVoiceAssistant {
             this.showToast('❌ Could not access microphone. Please allow microphone access.');
             this.isListening = false;
             this.updateUIState('idle');
+            if (typeof resumeWakeWordDetection === 'function') {
+                resumeWakeWordDetection();
+            }
+        }
+    }
+
+    // Short beep so the user knows recording has actually started —
+    // generated on the fly, no audio file needed.
+    playBeep() {
+        try {
+            const ctx = new (window.AudioContext || window.webkitAudioContext)();
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.frequency.value = 880;
+            gain.gain.value = 0.15;
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start();
+            osc.stop(ctx.currentTime + 0.15);
+            osc.onended = () => ctx.close().catch(() => {});
+        } catch (e) {
+            console.warn('Beep failed:', e);
+        }
+    }
+
+    // Watches mic volume (RMS) while recording a command. Ignores the first
+    // ~3.5s (grace period, so it doesn't cut off before the user even starts
+    // talking), then if volume stays below the silence threshold for 3
+    // continuous seconds, auto-stops the recording.
+    _setupSilenceDetection(stream) {
+        const SILENCE_THRESHOLD = 0.02;
+        const GRACE_PERIOD_MS = 3500;
+        const SILENCE_DURATION_MS = 3000;
+        const CHECK_INTERVAL_MS = 200;
+
+        this._silenceCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const source = this._silenceCtx.createMediaStreamSource(stream);
+        const analyser = this._silenceCtx.createAnalyser();
+        analyser.fftSize = 2048;
+        source.connect(analyser);
+
+        const dataArray = new Float32Array(analyser.fftSize);
+        const startTime = Date.now();
+        let silenceStart = null;
+
+        this._silenceInterval = setInterval(() => {
+            analyser.getFloatTimeDomainData(dataArray);
+            let sumSq = 0;
+            for (let i = 0; i < dataArray.length; i++) sumSq += dataArray[i] * dataArray[i];
+            const rms = Math.sqrt(sumSq / dataArray.length);
+
+            const elapsed = Date.now() - startTime;
+            if (elapsed < GRACE_PERIOD_MS) return; // still in grace period, don't check yet
+
+            if (rms < SILENCE_THRESHOLD) {
+                if (silenceStart === null) silenceStart = Date.now();
+                if (Date.now() - silenceStart >= SILENCE_DURATION_MS) {
+                    console.log('🔇 Silence detected — auto-stopping recording');
+                    this.stopListening();
+                }
+            } else {
+                silenceStart = null; // reset the silence timer, they're still talking
+            }
+        }, CHECK_INTERVAL_MS);
+    }
+
+    _cleanupSilenceDetection() {
+        if (this._silenceInterval) {
+            clearInterval(this._silenceInterval);
+            this._silenceInterval = null;
+        }
+        if (this._silenceCtx) {
+            this._silenceCtx.close().catch(() => {});
+            this._silenceCtx = null;
         }
     }
 
@@ -444,12 +530,25 @@ class AIVoiceAssistant {
         if (this.mediaRecorder && this.mediaRecorder.state !== 'inactive') {
             this.mediaRecorder.stop();
         }
+
+        this._cleanupSilenceDetection();
+
+        if (this._currentStream) {
+            this._currentStream.getTracks().forEach(t => t.stop());
+            this._currentStream = null;
+        }
         
         this.isListening = false;
         this.updateUIState('idle');
         
         if (this.listeningTimeout) {
             clearTimeout(this.listeningTimeout);
+        }
+
+        // Resume the background wake-word listener now that we're done
+        // recording — socket was never closed, so this is instant.
+        if (typeof resumeWakeWordDetection === 'function') {
+            resumeWakeWordDetection();
         }
         
         console.log('⏹️ Stopped listening');
