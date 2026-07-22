@@ -1,4 +1,40 @@
 // ==============================================
+// STRING SIMILARITY (Levenshtein-based) — used for fuzzy song matching
+// when Whisper's transcription is garbled and exact/substring matching
+// in findClosestSong() fails to find anything.
+// ==============================================
+function levenshteinDistance(a, b) {
+    const matrix = [];
+    for (let i = 0; i <= b.length; i++) matrix[i] = [i];
+    for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
+
+    for (let i = 1; i <= b.length; i++) {
+        for (let j = 1; j <= a.length; j++) {
+            if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+                matrix[i][j] = Math.min(
+                    matrix[i - 1][j - 1] + 1, // substitution
+                    matrix[i][j - 1] + 1,     // insertion
+                    matrix[i - 1][j] + 1      // deletion
+                );
+            }
+        }
+    }
+    return matrix[b.length][a.length];
+}
+
+// Returns a similarity score from 0 (completely different) to 1 (identical)
+function stringSimilarity(a, b) {
+    if (!a || !b) return 0;
+    const longer = a.length > b.length ? a : b;
+    const shorter = a.length > b.length ? b : a;
+    if (longer.length === 0) return 1;
+    const distance = levenshteinDistance(longer, shorter);
+    return (longer.length - distance) / longer.length;
+}
+
+// ==============================================
 // AI ASSISTANT FOR ANIQUEN MUSIC PLAYER
 // ==============================================
 
@@ -866,6 +902,11 @@ ONLY respond with JSON, no other text.`;
                 }
             }
             
+            // Last resort: fuzzy match (handles garbled Whisper output)
+            if (!match) {
+                match = this.fuzzyFindSong(songName);
+            }
+            
             if (match) {
                 return { 
                     command: 'play_song', 
@@ -1179,9 +1220,50 @@ ONLY respond with JSON, no other text.`;
         // Try removing common words and search again
         const cleanedQuery = lowerQuery.replace(/play|please|now|the|a|an/g, '').trim();
         if (cleanedQuery && cleanedQuery !== lowerQuery) {
-            return this.findClosestSong(cleanedQuery);
+            const cleanedMatch = this.findClosestSongExactTiers(cleanedQuery);
+            if (cleanedMatch) return cleanedMatch;
         }
-        
+
+        // FUZZY MATCH (last resort) — handles garbled Whisper transcriptions
+        // like "mansa sloan" → "Manasha (Slowed)" that none of the above
+        // exact/substring tiers can catch. Scores every title by string
+        // similarity and picks the best one above a minimum threshold.
+        return this.fuzzyFindSong(lowerQuery);
+    }
+
+    // Same as findClosestSong but WITHOUT recursing into the cleaned-query
+    // branch — used internally to avoid infinite recursion.
+    findClosestSongExactTiers(lowerQuery) {
+        let match = this.songList.find(s => s.title.toLowerCase() === lowerQuery);
+        if (match) return match;
+        match = this.songList.find(s => 
+            s.title.toLowerCase().includes(lowerQuery) || lowerQuery.includes(s.title.toLowerCase())
+        );
+        if (match) return match;
+        return this.fuzzyFindSong(lowerQuery);
+    }
+
+    // Fuzzy string matching using normalized Levenshtein similarity.
+    // Returns the best-matching song if its similarity clears a minimum
+    // bar, otherwise null (better to say "not found" than to play the
+    // wrong song).
+    fuzzyFindSong(lowerQuery) {
+        const MIN_SIMILARITY = 0.45; // 0 = no match at all, 1 = identical
+        let bestSong = null;
+        let bestScore = 0;
+
+        for (const s of this.songList) {
+            const titleScore = stringSimilarity(lowerQuery, s.title.toLowerCase());
+            if (titleScore > bestScore) {
+                bestScore = titleScore;
+                bestSong = s;
+            }
+        }
+
+        if (bestSong && bestScore >= MIN_SIMILARITY) {
+            console.log(`🔍 Fuzzy matched "${lowerQuery}" → "${bestSong.title}" (similarity: ${bestScore.toFixed(2)})`);
+            return bestSong;
+        }
         return null;
     }
     
