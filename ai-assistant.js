@@ -13,9 +13,9 @@ class AIVoiceAssistant {
         this.lastCommand = '';
         this.commandHistory = [];
         
-        // API Keys
-        this.whisperApiKey = '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';
-        this.llmApiKey = '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';
+        // API keys are no longer stored here — they live server-side on
+        // the proxy VM. Client only talks to our own endpoints.
+        this.proxyBaseUrl = 'https://34-55-6-30.sslip.io';
         
         // Model names
         this.whisperModel = 'whisper-large-v3-turbo';
@@ -643,26 +643,20 @@ class AIVoiceAssistant {
             const byteArray = new Uint8Array(byteNumbers);
             const blob = new Blob([byteArray], { type: 'audio/webm' });
             
-            // Create FormData for API request
+            // Create FormData for our proxy server (no API key needed here —
+            // the server attaches it before forwarding to Groq)
             const formData = new FormData();
             formData.append('file', blob, 'audio.webm');
-            formData.append('model', this.whisperModel);
-            formData.append('response_format', 'text');
-            formData.append('language', 'en');
             
-            // Call Groq API with FormData
-            const response = await fetch('https://api.groq.com/openai/v1/audio/transcriptions', {
+            const response = await fetch(`${this.proxyBaseUrl}/api/transcribe`, {
                 method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${this.whisperApiKey}`
-                },
                 body: formData
             });
             
             if (!response.ok) {
                 const errorText = await response.text();
-                console.error('Whisper API error response:', errorText);
-                throw new Error(`Whisper API error: ${response.status} - ${errorText}`);
+                console.error('Transcription proxy error response:', errorText);
+                throw new Error(`Transcription proxy error: ${response.status} - ${errorText}`);
             }
             
             const text = await response.text();
@@ -738,10 +732,9 @@ class AIVoiceAssistant {
             
             const systemPrompt = this.buildSystemPrompt(songTitles);
             
-            const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+            const response = await fetch(`${this.proxyBaseUrl}/api/chat`, {
                 method: 'POST',
                 headers: {
-                    'Authorization': `Bearer ${this.llmApiKey}`,
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
@@ -757,8 +750,8 @@ class AIVoiceAssistant {
             
             if (!response.ok) {
                 const errorText = await response.text();
-                console.error('LLM API error response:', errorText);
-                throw new Error(`LLM API error: ${response.status}`);
+                console.error('LLM proxy error response:', errorText);
+                throw new Error(`LLM proxy error: ${response.status}`);
             }
             
             const data = await response.json();
